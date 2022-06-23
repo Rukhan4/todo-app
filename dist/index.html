@@ -7,11 +7,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>To Do App</title>
     <script src="./main.js" defer></script>
+    <link rel="stylesheet" href="./style.css">
     <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 </head>
 
 <body>
+    <div id="background"></div>
+    <div class="content">
+        <header>
+            <img id="logo" src="./images/logo.png" alt="logo">
+        </header>
+        <div class="action">
 
+            <div class="sidebar">
+                <ul>
+                    <li><button id="home">Home</button></li>
+                    <li><button id="today">Today</button></li>
+                    <li><button id="week">Week</button></li>
+                    <li><button id="projects">Projects</button></li>
+                    <li><button id="notes">Notes</button></li>
+                </ul>
+
+                <button id="new" class="w3-button w3-xlarge w3-circle w3-black">+</button>
+            </div>
+
+            <div class="main">
+            </div>
+
+        </div>
+
+    </div>
 </body>
 
 </html>
