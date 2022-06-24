@@ -198,3 +198,54 @@ ul.form-list>li>button {
     justify-content: space-around;
     line-height: 10px;
 }
+
+button#low,
+button#med,
+button#high {
+    all: unset;
+    border-radius: 5px;
+    font-size: 13px;
+    padding: 5px;
+    font-weight: bolder;
+    cursor: pointer;
+    -webkit-transition: all 500ms ease;
+    -moz-transition: all 500ms ease;
+    -ms-transition: all 500ms ease;
+    -o-transition: all 500ms ease;
+    transition: all 500ms ease;
+    color: white;
+}
+
+button#low {
+    border: 2px solid green;
+    color: green;
+}
+
+button#low:hover,
+button#low:focus {
+    background: green;
+    color: white;
+}
+
+button#med {
+    border: 2px solid rgb(252, 216, 55);
+    color: rgb(252, 216, 55);
+}
+
+button#med:hover,
+button#med:focus {
+    background: rgb(252, 216, 55);
+    color: white;
+
+}
+
+button#high {
+    border: 2px solid red;
+    color: red;
+}
+
+button#high:hover,
+button#high:focus {
+    background: red;
+    color: white;
+}
