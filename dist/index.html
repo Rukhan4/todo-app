@@ -23,11 +23,14 @@
 
         <div id="popUp">
             <form id="form" action="../src/form.js">
-                <span><button type="button" id="close">x</button></span>
-                <legend>New Task</legend>
+                <div class="form-header">
+                    <span><button type="button" id="close">x</button></span>
+                    <legend id="leg-header">New Task</legend>
+                </div>
                 <div id="textInput">
-                    <p><input type='text' id='name' name='title' placeholder='Title: '></p>
-                    <p><input type='text' id='desc' name='desc' placeholder='Details: '></p>
+                    <p><input type='text' id='task-name' name='title' placeholder='Title: '></p>
+                    <textarea rows="4" cols="20" type='text' id='task-desc' name='desc'
+                        placeholder='Details: '></textarea>
                 </div>
                 <button type="submit" form="form" id="submit">Add Task</button>
             </form>
