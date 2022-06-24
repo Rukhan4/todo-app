@@ -25,20 +25,32 @@
             <form id="form" action="../src/form.js">
                 <div class="form-header">
                     <span><button type="button" id="close">x</button></span>
-                    <legend id="leg-header">New Task</legend>
+                    <legend id="leg-header">Create a new...</legend>
                 </div>
-                <div id="textInput">
-                    <p><input type='text' id='task-name' name='title' placeholder='Title: '></p>
-                    <textarea rows="4" cols="20" type='text' id='task-desc' name='desc'
-                        placeholder='Details: '></textarea>
+                <div id="taskmaker">
+                    <div id="form-sidebar">
+                        <ul>
+                            <li><button type="button" id="form-home">Home</button></li>
+                            <li><button type="button" id="form-projects">Project</button></li>
+                            <li><button type="button" id="form-notes">Notes</button></li>
+                        </ul>
+                    </div>
+                    <div class="form-main">
+                        <div id="textInput">
+                            <p><input type='text' id='task-name' name='title' placeholder='Title: '></p>
+                            <textarea rows="4" cols="20" type='text' id='task-desc' name='desc'
+                                placeholder='Details: '></textarea>
+                        </div>
+                        <button type="submit" form="form" id="submit">Add Task</button>
+                    </div>
+
                 </div>
-                <button type="submit" form="form" id="submit">Add Task</button>
             </form>
         </div>
 
         <div class="action">
             <div class="sidebar">
-                <ul>
+                <ul class="front-list">
                     <li><button id="home">Home</button></li>
                     <li><button id="today">Today</button></li>
                     <li><button id="week">Week</button></li>
