@@ -22,7 +22,7 @@
         </header>
 
         <div id="popUp">
-            <form id="form" action="../src/form.js">
+            <form id="form" action="../src/form.js" novalidate>
                 <div class="form-header">
                     <span><button type="button" id="close">x</button></span>
                     <legend id="leg-header">Create a new...</legend>
@@ -37,7 +37,8 @@
                         </ul>
                     </div>
                     <div class="form-main">
-                        <p><input type='text' id='task-name' name='title' placeholder='Title: '></p>
+                        <p><input type='text' id='task-name' name='title' placeholder='Title: ' minlength="1">
+                        </p>
                         <textarea rows="4" cols="30" type='text' id='task-desc' name='desc'
                             placeholder='Details: '></textarea>
                         <div id="due-date">Due Date: </div>
@@ -50,7 +51,8 @@
                                     <span><button type="button" id="high">HIGH</button></span>
                                 </span>
                             </span>
-                            <button type="submit" form="form" id="submit">Add Task</button>
+                            <button type="submit" form="form" id="submit" value="Submit form">Add
+                                Task</button>
                         </div>
 
                     </div>
@@ -61,14 +63,14 @@
         <div class="action">
             <div class="sidebar">
                 <ul class="front-list">
-                    <li><button id="home">Home</button></li>
-                    <li><button id="today">Today</button></li>
-                    <li><button id="week">Week</button></li>
-                    <li><button id="projects">Projects</button></li>
-                    <li><button id="notes">Notes</button></li>
+                    <li><button type="button" id="home">Home</button></li>
+                    <li><button type="button" id="today">Today</button></li>
+                    <li><button type="button" id="week">Week</button></li>
+                    <li><button type="button" id="projects">Projects</button></li>
+                    <li><button type="button" id="notes">Notes</button></li>
                 </ul>
 
-                <button id="new" class="w3-button w3-xlarge w3-circle w3-black">+</button>
+                <button type="button" id="new" class="w3-button w3-xlarge w3-circle w3-black">+</button>
             </div>
 
             <div class="main">

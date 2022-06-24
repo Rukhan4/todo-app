@@ -6,9 +6,17 @@ openForm.addEventListener("click", () => {
     console.log("clicked");
 });
 
+const formTitle = document.getElementById("task-name");
 const submitForm = document.getElementById("submit");
-submitForm.addEventListener("click", () => {
-    popUpForm.style.display = "none";
+
+submitForm.addEventListener("click", (event) => {
+    if (formTitle.value == "") {
+        formTitle.setCustomValidity("Please fill out this field!");
+        formTitle.reportValidity();
+        event.preventDefault();
+    } else {
+        popUpForm.style.display = "none"
+    };
 });
 
 const closeForm = document.getElementById("close");
