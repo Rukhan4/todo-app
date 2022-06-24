@@ -29,10 +29,10 @@
                 </div>
                 <div id="taskmaker">
                     <div id="form-sidebar">
-                        <ul>
-                            <li><button type="button" id="form-home">Home</button></li>
+                        <ul class="form-list">
+                            <li><button type="button" id="form-task">Task</button></li>
                             <li><button type="button" id="form-projects">Project</button></li>
-                            <li><button type="button" id="form-notes">Notes</button></li>
+                            <li><button type="button" id="form-notes">Note</button></li>
                         </ul>
                     </div>
                     <div class="form-main">
@@ -41,7 +41,10 @@
                             <textarea rows="4" cols="20" type='text' id='task-desc' name='desc'
                                 placeholder='Details: '></textarea>
                         </div>
-                        <button type="submit" form="form" id="submit">Add Task</button>
+                        <div class="form-settings">
+                            <button type="submit" form="form" id="submit">Add Task</button>
+                        </div>
+
                     </div>
 
                 </div>

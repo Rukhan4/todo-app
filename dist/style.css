@@ -1,3 +1,8 @@
+body {
+    padding: 0px;
+    margin: 0px;
+}
+
 #background {
     position: fixed;
     top: 50%;
@@ -65,7 +70,6 @@ ul.front-list>li>button:hover:not(#projects) {
     grid-template-columns: 1fr 2fr;
     box-sizing: border-box;
     border-radius: 15px;
-
 }
 
 .sidebar {
@@ -83,7 +87,7 @@ button#new {
 #popUp {
     display: none;
     position: fixed;
-    z-index: 2;
+    z-index: 1;
     left: 0;
     top: 0;
     width: 100%;
@@ -97,7 +101,8 @@ button#new {
 #form {
     background-color: #fefefe;
     border: 1px solid #888;
-    width: auto;
+    width: 800px;
+    height: auto;
     position: fixed;
     left: 50%;
     top: 10%;
@@ -108,11 +113,10 @@ button#new {
     background-color: red;
     text-align: center;
     width: 100%;
-    display: inline-block;
-    justify-content: center;
     margin: 0;
     text-align: center;
     background-color: #82ff7d;
+    font-weight: bold;
 }
 
 #leg-header {
@@ -141,11 +145,39 @@ input#task-name {
     height: 30px;
     width: 200px;
     font-size: 20px;
-    border: solid 3px black;
+    border: none;
+}
+
+#task-desc {
+    border: none;
+    font-size: 25px;
+    resize: none;
+}
+
+input#task-name:focus,
+#task-desc:focus {
+    outline: none;
 }
 
 #taskmaker {
     display: grid;
     grid-template-columns: 1fr 2fr;
-    width: auto;
+    box-sizing: border-box;
+}
+
+#form-sidebar {
+    background-color: rgb(194, 235, 194);
+}
+
+.form-main {
+    padding-left: 25px;
+}
+
+ul.form-list>li>button {
+    all: unset;
+    cursor: pointer;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    font-size: 25px;
+    padding-right: 25px;
 }
