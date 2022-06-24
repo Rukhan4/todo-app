@@ -27,6 +27,7 @@
                     <span><button type="button" id="close">x</button></span>
                     <legend id="leg-header">Create a new...</legend>
                 </div>
+
                 <div id="taskmaker">
                     <div id="form-sidebar">
                         <ul class="form-list">
@@ -36,17 +37,16 @@
                         </ul>
                     </div>
                     <div class="form-main">
-                        <div id="textInput">
-                            <p><input type='text' id='task-name' name='title' placeholder='Title: '></p>
-                            <textarea rows="4" cols="20" type='text' id='task-desc' name='desc'
-                                placeholder='Details: '></textarea>
-                        </div>
+                        <p><input type='text' id='task-name' name='title' placeholder='Title: '></p>
+                        <textarea rows="4" cols="30" type='text' id='task-desc' name='desc'
+                            placeholder='Details: '></textarea>
+                        <div id="due-date">Due Date: </div>
                         <div class="form-settings">
+                            <span id="priority">Priority: </span>
                             <button type="submit" form="form" id="submit">Add Task</button>
                         </div>
 
                     </div>
-
                 </div>
             </form>
         </div>
