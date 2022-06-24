@@ -16,11 +16,24 @@
 <body>
     <div id="background"></div>
     <div class="content">
+
         <header>
             <img id="logo" src="./images/logo.png" alt="logo">
         </header>
-        <div class="action">
 
+        <div id="popUp">
+            <form id="form" action="../src/form.js">
+                <span><button type="button" id="close">x</button></span>
+                <legend>New Task</legend>
+                <div id="textInput">
+                    <p><input type='text' id='name' name='title' placeholder='Title: '></p>
+                    <p><input type='text' id='desc' name='desc' placeholder='Details: '></p>
+                </div>
+                <button type="submit" form="form" id="submit">Add Task</button>
+            </form>
+        </div>
+
+        <div class="action">
             <div class="sidebar">
                 <ul>
                     <li><button id="home">Home</button></li>
@@ -35,7 +48,6 @@
 
             <div class="main">
             </div>
-
         </div>
 
     </div>
