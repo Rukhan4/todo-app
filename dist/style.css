@@ -335,7 +335,7 @@ input[type='checkbox'] {
     border-radius: 10%;
     border: 2px solid rgba(230, 42, 42, 0.9);
     box-shadow: none;
-    font-size: 1em;
+    font-size: 12px;
     cursor: pointer;
 }
 
@@ -346,8 +346,8 @@ input[type='checkbox']:checked {
 input[type='checkbox']:checked:after {
     content: '✓';
     color: white;
-    height: inherit;
-    width: inherit;
+    width: 20px !important;
+    height: 20px !important;
 }
 
 .todo-title {
