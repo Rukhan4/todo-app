@@ -323,6 +323,8 @@ object.todo-icon-delete {
 .todo>* {
     margin-left: 5px;
     margin-right: 25px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 900;
 }
 
 input[type='checkbox'] {
@@ -361,15 +363,15 @@ input[type='checkbox']:checked:after {
 .todo-detail>button {
     background-color: transparent;
     background-repeat: no-repeat;
-    border: none;
     cursor: pointer;
     overflow: hidden;
     outline: none;
     border: 1px solid rgba(230, 42, 42, 0.9);
     border-radius: 5px;
-    font-size: 15px;
+    font-size: 17px;
     color: rgba(230, 42, 42, 0.9);
-    font-weight: bold;
+    font-weight: 900;
+
 }
 
 .svgs {
