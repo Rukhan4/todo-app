@@ -293,3 +293,36 @@ button#high:focus {
     background: red;
     color: white;
 }
+
+
+/* svgs */
+
+object.todo-icon-edit,
+object.todo-icon-delete {
+    height: 20px;
+    width: 20px;
+}
+
+/* main */
+
+.main {
+    padding: 15px;
+}
+
+.todo {
+    background-color: rgba(0, 0, 0, 0.1);
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.todo>* {
+    margin-left: 10px;
+    margin-right: 25px;
+}
+
+.todo-title {
+    margin-right: 200px;
+    margin-left: 5px;
+}
