@@ -40,7 +40,7 @@ formDate.setAttribute("value", set);
 
 updateDate.addEventListener("blur", () => {
     console.log(updateDate.value);
-    todoDate.textContent = moment(updateDate).format("MMMM D YYYY");
+    todoDate.textContent = moment(updateDate.value).format("MMM D YYYY");
     console.log(todoDate.textContent);
 });
 

@@ -358,7 +358,9 @@ input[type='checkbox']:checked:after {
 
 .todo-date {
     font-size: 12px;
-
+    display: -webkit-box;
+    -webkit-box-pack: center;
+    -webkit-box-align: center;
 }
 
 .todo-detail>button {
