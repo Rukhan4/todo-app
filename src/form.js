@@ -1,13 +1,14 @@
 const popUpForm = document.getElementById("popUp");
-
-const openForm = document.getElementById("new");
-openForm.addEventListener("click", () => {
-    popUpForm.style.display = "block";
-    console.log("clicked");
-});
-
 const formTitle = document.getElementById("task-name");
 const submitForm = document.getElementById("submit");
+const openForm = document.getElementById("new");
+const formDate = document.getElementById("updateDate");
+const closeForm = document.getElementById("close");
+const todoDate = document.getElementById("todo-date");
+
+openForm.addEventListener("click", () => {
+    popUpForm.style.display = "block";
+});
 
 submitForm.addEventListener("click", (event) => {
     if (formTitle.value == "") {
@@ -25,9 +26,22 @@ formTitle.addEventListener("input", () => {
     };
 })
 
-const closeForm = document.getElementById("close");
 closeForm.addEventListener("click", () => {
     popUpForm.style.display = "none";
 });
 
-export { openForm, submitForm, closeForm };
+function getDate() {
+    var current = new Date();
+    return current.toISOString().split('T')[0];
+};
+
+var set = getDate();
+formDate.setAttribute("value", set);
+
+updateDate.addEventListener("blur", () => {
+    console.log(updateDate.value);
+    todoDate.textContent = moment(updateDate).format("MMMM D YYYY");
+    console.log(todoDate.textContent);
+});
+
+export { openForm, submitForm, closeForm, getDate };

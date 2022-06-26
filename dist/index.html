@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>To Do App</title>
     <script src="./main.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.15.0/moment.min.js"></script>
     <link rel="stylesheet" href="./style.css">
     <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -44,9 +45,9 @@
                             placeholder='Details: '></textarea>
                         <div id="due-date">
                             <span>Due Date: </span>
-                            <span><input type="date" required></span>
+                            <span><input type="date" id="updateDate" onclick="this.type='date'" required></span>
                         </div>
-                        <div class="form-settings">
+                        <div class=" form-settings">
                             <span class="priority-list">
                                 <span class="priority">Priority: </span>
                                 <span>
@@ -83,7 +84,7 @@
                         </span>
                         <span class="todo-title">Placeholder for task</span>
                         <span class="todo-detail"><button type="button">Details</button></span>
-                        <span class="todo-date">Jun 22nd</span>
+                        <span id="todo-date"></span>
                         <div class="svgs">
                             <object data="./images/edit-svgrepo-com.svg" type="image/svg+xml" class="todo-icon-edit">
                             </object>

@@ -1,2 +1,2 @@
-import { closeForm, openForm, submitForm } from "./form.js"
+import { closeForm, openForm, submitForm, getDate } from "./form.js"
 
