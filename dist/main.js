@@ -7,16 +7,15 @@
  * If you are looking for production-ready output files, see mode: "production" (https://webpack.js.org/configuration/mode/).
  */
 /******/ (() => { // webpackBootstrap
-/******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
 /***/ "./src/form.js":
 /*!*********************!*\
   !*** ./src/form.js ***!
   \*********************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+/***/ (() => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"closeForm\": () => (/* binding */ closeForm),\n/* harmony export */   \"getDate\": () => (/* binding */ getDate),\n/* harmony export */   \"openForm\": () => (/* binding */ openForm),\n/* harmony export */   \"submitForm\": () => (/* binding */ submitForm)\n/* harmony export */ });\nconst popUpForm = document.getElementById(\"popUp\");\nconst formTitle = document.getElementById(\"task-name\");\nconst submitForm = document.getElementById(\"submit\");\nconst openForm = document.getElementById(\"new\");\nconst formDate = document.getElementById(\"updateDate\");\nconst closeForm = document.getElementById(\"close\");\nconst todoDate = document.getElementById(\"todo-date\");\n\nopenForm.addEventListener(\"click\", () => {\n    popUpForm.style.display = \"block\";\n});\n\nsubmitForm.addEventListener(\"click\", (event) => {\n    if (formTitle.value == \"\") {\n        formTitle.setCustomValidity(\"Please fill out this field!\");\n        formTitle.reportValidity();\n        event.preventDefault();\n    } else {\n        popUpForm.style.display = \"none\"\n    };\n});\n\nformTitle.addEventListener(\"input\", () => {\n    if (formTitle.value != \"\") {\n        formTitle.setCustomValidity(\"\");\n    };\n})\n\ncloseForm.addEventListener(\"click\", () => {\n    popUpForm.style.display = \"none\";\n});\n\nfunction getDate() {\n    var current = new Date();\n    return current.toISOString().split('T')[0];\n};\n\nvar set = getDate();\nformDate.setAttribute(\"value\", set);\n\nupdateDate.addEventListener(\"blur\", () => {\n    console.log(updateDate.value);\n    todoDate.textContent = moment(updateDate.value).format(\"MMM D YYYY\");\n    console.log(todoDate.textContent);\n});\n\n\n\n//# sourceURL=webpack://todo-app/./src/form.js?");
+eval("const popUpForm = document.getElementById(\"popUp\");\nconst formTitle = document.getElementById(\"task-name\");\nconst submitForm = document.getElementById(\"submit\");\nconst openForm = document.getElementById(\"new\");\nconst formDate = document.getElementById(\"updateDate\");\nconst closeForm = document.getElementById(\"close\");\nconst todoDate = document.getElementById(\"todo-date\");\nconst formDetail = document.getElementById(\"task-desc\");\nconst detailBtn = document.getElementById(\"todo-detail\");\nconst detailCtnr = document.getElementById(\"details-container\");\nconst closeDetails = document.getElementById(\"close-details\");\nconst todoTitle = document.getElementById(\"todo-title\");\n\nconst detailName = document.getElementById(\"detail-name\");\nconst detailDate = document.getElementById(\"detail-date\");\nconst detailPriority = document.getElementById(\"detail-priority\");\nconst detailPara = document.getElementById(\"detail-para\");\n\n// FORM UI ------------------------------------------------------------------ //\n\nopenForm.addEventListener(\"click\", () => {\n    popUpForm.style.display = \"block\";\n});\n\nsubmitForm.addEventListener(\"click\", (event) => {\n    if (formTitle.value == \"\") {\n        formTitle.setCustomValidity(\"Please fill out this field!\");\n        formTitle.reportValidity();\n        event.preventDefault();\n    } else {\n        popUpForm.style.display = \"none\"\n    };\n});\n\nformTitle.addEventListener(\"input\", () => {\n    if (formTitle.value != \"\") {\n        formTitle.setCustomValidity(\"\");\n    };\n});\n\ncloseForm.addEventListener(\"click\", () => {\n    popUpForm.style.display = \"none\";\n});\n\n// DATE CONTROL ------------------------------------------------------------- //\n\nfunction getDate() {\n    var current = new Date();\n    return current.toISOString().split('T')[0];\n};\n\nformDate.setAttribute(\"value\", getDate());\n\n// DETAILS ------------------------------------------------------------------ //\n\nformDetail.addEventListener(\"blur\", () => {\n    console.log(formDetail.value);\n});\n\ndetailBtn.addEventListener(\"click\", () => {\n    detailCtnr.style.display = \"block\";\n});\n\ncloseDetails.addEventListener(\"click\", () => {\n    detailCtnr.style.display = \"none\";\n});\n\nfunction setDetails() {\n    submitForm.addEventListener(\"click\", () => {\n        //console.log(formTitle.value);\n        detailName.textContent = `Task Name: ${formTitle.value}`;\n        detailDate.textContent = `Due Date: ${formDate.value}`;\n        detailPriority.textContent = `Priority: `;\n        detailPara.textContent = `Details: ${formDetail.value}`;\n        todoDate.textContent = moment(formDate.value).format(\"MMM D YYYY\");\n        todoTitle.textContent = formTitle.value;\n    });\n}\n\nsetDetails();\n\n//# sourceURL=webpack://todo-app/./src/form.js?");
 
 /***/ }),
 
@@ -26,7 +25,8 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _form_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./form.js */ \"./src/form.js\");\n\n\n\n\n//# sourceURL=webpack://todo-app/./src/index.js?");
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _form_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./form.js */ \"./src/form.js\");\n/* harmony import */ var _form_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_form_js__WEBPACK_IMPORTED_MODULE_0__);\n\n\n\n\n//# sourceURL=webpack://todo-app/./src/index.js?");
 
 /***/ })
 
@@ -57,6 +57,18 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _for
 /******/ 	}
 /******/ 	
 /************************************************************************/
+/******/ 	/* webpack/runtime/compat get default export */
+/******/ 	(() => {
+/******/ 		// getDefaultExport function for compatibility with non-harmony modules
+/******/ 		__webpack_require__.n = (module) => {
+/******/ 			var getter = module && module.__esModule ?
+/******/ 				() => (module['default']) :
+/******/ 				() => (module);
+/******/ 			__webpack_require__.d(getter, { a: getter });
+/******/ 			return getter;
+/******/ 		};
+/******/ 	})();
+/******/ 	
 /******/ 	/* webpack/runtime/define property getters */
 /******/ 	(() => {
 /******/ 		// define getter functions for harmony exports
