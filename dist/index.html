@@ -41,8 +41,8 @@
                         <p><input type='text' id='task-name' name='title' placeholder='Title: ' minlength="1"
                                 maxlength="40">
                         </p>
-                        <textarea rows="4" cols="30" type='text' id='task-desc' name='desc'
-                            placeholder='Details: '></textarea>
+                        <textarea rows="4" cols="30" type='text' id='task-desc' name='desc' placeholder='Details: '
+                            maxlength="100"></textarea>
                         <div id="due-date">
                             <span>Due Date: </span>
                             <span><input type="date" id="updateDate" onclick="this.type='date'" required></span>
@@ -56,7 +56,8 @@
                                     <span><button type="button" id="high">HIGH</button></span>
                                 </span>
                             </span>
-                            <button type="submit" form="form" id="submit" value="Submit form">ADD TASK</button>
+                            <!-- submit -->
+                            <button type="button" form="form" id="submit" value="Submit form">ADD TASK</button>
                         </div>
                     </div>
                 </div>
@@ -82,8 +83,8 @@
                         <span class="todo-check">
                             <input type="checkbox">
                         </span>
-                        <span class="todo-title">Placeholder for task</span>
-                        <span class="todo-detail"><button type="button">Details</button></span>
+                        <span id="todo-title"></span>
+                        <span id="todo-detail"><button type="button">Details</button></span>
                         <span id="todo-date"></span>
                         <div class="svgs">
                             <object data="./images/edit-svgrepo-com.svg" type="image/svg+xml" class="todo-icon-edit">
@@ -92,9 +93,16 @@
                                 class="todo-icon-delete">
                             </object>
                         </div>
-
                     </div>
                 </div>
+            </div>
+
+            <div id="details-container">
+                <span id="detail-name"> </span>
+                <span><button type="button" id="close-details">X</button></span>
+                <div id="detail-date"> </div>
+                <div id="detail-priority"></div>
+                <div id="detail-para"></div>
             </div>
         </div>
 
