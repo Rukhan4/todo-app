@@ -5,6 +5,18 @@ const openForm = document.getElementById("new");
 const formDate = document.getElementById("updateDate");
 const closeForm = document.getElementById("close");
 const todoDate = document.getElementById("todo-date");
+const formDetail = document.getElementById("task-desc");
+const detailBtn = document.getElementById("todo-detail");
+const detailCtnr = document.getElementById("details-container");
+const closeDetails = document.getElementById("close-details");
+const todoTitle = document.getElementById("todo-title");
+
+const detailName = document.getElementById("detail-name");
+const detailDate = document.getElementById("detail-date");
+const detailPriority = document.getElementById("detail-priority");
+const detailPara = document.getElementById("detail-para");
+
+// FORM UI ------------------------------------------------------------------ //
 
 openForm.addEventListener("click", () => {
     popUpForm.style.display = "block";
@@ -24,24 +36,45 @@ formTitle.addEventListener("input", () => {
     if (formTitle.value != "") {
         formTitle.setCustomValidity("");
     };
-})
+});
 
 closeForm.addEventListener("click", () => {
     popUpForm.style.display = "none";
 });
+
+// DATE CONTROL ------------------------------------------------------------- //
 
 function getDate() {
     var current = new Date();
     return current.toISOString().split('T')[0];
 };
 
-var set = getDate();
-formDate.setAttribute("value", set);
+formDate.setAttribute("value", getDate());
 
-updateDate.addEventListener("blur", () => {
-    console.log(updateDate.value);
-    todoDate.textContent = moment(updateDate.value).format("MMM D YYYY");
-    console.log(todoDate.textContent);
+// DETAILS ------------------------------------------------------------------ //
+
+formDetail.addEventListener("blur", () => {
+    console.log(formDetail.value);
 });
 
-export { openForm, submitForm, closeForm, getDate };
+detailBtn.addEventListener("click", () => {
+    detailCtnr.style.display = "block";
+});
+
+closeDetails.addEventListener("click", () => {
+    detailCtnr.style.display = "none";
+});
+
+function setDetails() {
+    submitForm.addEventListener("click", () => {
+        //console.log(formTitle.value);
+        detailName.textContent = `Task Name: ${formTitle.value}`;
+        detailDate.textContent = `Due Date: ${formDate.value}`;
+        detailPriority.textContent = `Priority: `;
+        detailPara.textContent = `Details: ${formDetail.value}`;
+        todoDate.textContent = moment(formDate.value).format("MMM D YYYY");
+        todoTitle.textContent = formTitle.value;
+    });
+}
+
+setDetails();
