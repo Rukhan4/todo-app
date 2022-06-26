@@ -19,6 +19,12 @@ submitForm.addEventListener("click", (event) => {
     };
 });
 
+formTitle.addEventListener("input", () => {
+    if (formTitle.value != "") {
+        formTitle.setCustomValidity("");
+    };
+})
+
 const closeForm = document.getElementById("close");
 closeForm.addEventListener("click", () => {
     popUpForm.style.display = "none";
