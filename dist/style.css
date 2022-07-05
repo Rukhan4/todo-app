@@ -319,6 +319,7 @@ object.todo-icon-delete {
     justify-content: center;
     align-items: center;
     border-left: 3px solid red;
+    padding-left: 5px;
 }
 
 .todo>* {
@@ -336,7 +337,7 @@ input[type='checkbox'] {
     height: 20px !important;
     appearance: none;
     border-radius: 10%;
-    border: 2px solid rgba(230, 42, 42, 0.9);
+    border: 2.5px solid black;
     box-shadow: none;
     font-size: 12px;
     cursor: pointer;
@@ -364,24 +365,6 @@ input[type='checkbox']:checked:after {
     -webkit-box-align: center;
 }
 
-#todo-detail>button {
-    background-color: transparent;
-    background-repeat: no-repeat;
-    cursor: pointer;
-    overflow: hidden;
-    outline: none;
-    border: 1px solid rgba(230, 42, 42, 0.9);
-    border-radius: 5px;
-    font-size: 16px;
-    color: rgba(230, 42, 42, 0.9);
-}
-
-#todo-detail>button:hover {
-    background-color: rgba(230, 42, 42, 0.8);
-    color: white;
-}
-
-
 .svgs {
     display: flex;
     justify-content: space-between;
@@ -395,6 +378,7 @@ input[type='checkbox']:checked:after {
     top: 53%;
     left: 60%;
     width: auto;
+    min-width: 300px;
     min-height: 100px;
     max-height: fit-content;
     font-family: 'Courier New', Courier, monospace;
@@ -409,9 +393,27 @@ input[type='checkbox']:checked:after {
 
 #close-details {
     float: right;
-    font-size: 25px;
+    font-size: 2vh;
     border: none;
     outline: none;
     background: none;
     cursor: pointer;
+}
+
+#todo-detail>button {
+    background-color: transparent;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    overflow: hidden;
+    outline: none;
+    border: 2px solid black;
+    border-radius: 5px;
+    font-size: 16px;
+    color: black;
+    margin-bottom: 5px;
+}
+
+#todo-detail>button:hover {
+    background-color: rgba(230, 42, 42, 0.8);
+    color: white;
 }
