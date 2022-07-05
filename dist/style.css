@@ -244,7 +244,7 @@ ul.form-list>li>button {
 }
 
 button#low,
-button#med,
+button#medium,
 button#high {
     all: unset;
     border-radius: 5px;
@@ -271,13 +271,13 @@ button#low:focus {
     color: white;
 }
 
-button#med {
+button#medium {
     border: 2px solid rgb(252, 216, 55);
     color: rgb(252, 216, 55);
 }
 
-button#med:hover,
-button#med:focus {
+button#medium:hover,
+button#medium:focus {
     background: rgb(252, 216, 55);
     color: white;
 
@@ -318,6 +318,7 @@ object.todo-icon-delete {
     margin: auto;
     justify-content: center;
     align-items: center;
+    border-left: 3px solid red;
 }
 
 .todo>* {

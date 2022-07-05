@@ -16,6 +16,9 @@ const detailDate = document.getElementById("detail-date");
 const detailPriority = document.getElementById("detail-priority");
 const detailPara = document.getElementById("detail-para");
 
+const priorityBtns = document.getElementsByClassName("pri-btns");
+const todo = document.getElementsByClassName("todo")[0];
+
 // FORM UI ------------------------------------------------------------------ //
 
 openForm.addEventListener("click", () => {
@@ -65,12 +68,32 @@ closeDetails.addEventListener("click", () => {
     detailCtnr.style.display = "none";
 });
 
+function setPriority(prio) {
+    switch (prio) {
+        case "low":
+            todo.style.borderLeft = "2px solid green";
+            break;
+        case "medium":
+            todo.style.borderLeft = "3px solid yellow";
+            break;
+        case "high":
+            todo.style.borderLeft = "2px solid red";
+            break;
+        default:
+            todo.style.borderLeft = "";
+    }
+}
+
 function setDetails() {
+    for (var i = 0; i < priorityBtns.length; i++) {
+        priorityBtns[i].addEventListener("click", function (event) {
+            detailPriority.textContent = `Priority: ${this.id}`;
+            setPriority(this.id);
+        });
+    };
     submitForm.addEventListener("click", () => {
-        //console.log(formTitle.value);
         detailName.textContent = `Task Name: ${formTitle.value}`;
         detailDate.textContent = `Due Date: ${formDate.value}`;
-        detailPriority.textContent = `Priority: `;
         detailPara.textContent = `Details: ${formDetail.value}`;
         todoDate.textContent = moment(formDate.value).format("MMM D YYYY");
         todoTitle.textContent = formTitle.value;
@@ -78,3 +101,5 @@ function setDetails() {
 }
 
 setDetails();
+
+
