@@ -113,6 +113,21 @@ ul.front-list>li>button:hover:not(#projects) {
     background-color: rgb(194, 235, 194);
 }
 
+#todo-count {
+    float: right;
+    margin-right: 15px;
+    border: 1px solid deeppink;
+    /* border-radius: 12px; */
+    padding: 2px;
+    font-size: 20px;
+    background-color: deeppink;
+    color: white;
+    text-align: center;
+    border-radius: 50%;
+    height: 4vh;
+    width: 4vh;
+}
+
 button#new {
     margin-left: 50px;
     margin-bottom: 100px;
@@ -297,16 +312,30 @@ button#high:focus {
 
 /* svgs */
 
+object {
+    pointer-events: none;
+}
+
 object.todo-icon-edit,
 object.todo-icon-delete {
     height: 20px;
     width: 20px;
 }
 
+.svgs {
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
 /* main */
 
 .main {
     padding: 15px;
+}
+
+.main>.todo {
+    margin-bottom: 7px;
 }
 
 .todo {
@@ -363,11 +392,6 @@ input[type='checkbox']:checked:after {
     display: -webkit-box;
     -webkit-box-pack: center;
     -webkit-box-align: center;
-}
-
-.svgs {
-    display: flex;
-    justify-content: space-between;
 }
 
 /* Details */
