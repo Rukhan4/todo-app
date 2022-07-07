@@ -1,3 +1,5 @@
+import { createTask } from "./todo"
+
 const popUpForm = document.getElementById("popUp");
 const formTitle = document.getElementById("task-name");
 const submitForm = document.getElementById("submit");
@@ -23,6 +25,7 @@ const todo = document.getElementsByClassName("todo")[0];
 
 openForm.addEventListener("click", () => {
     popUpForm.style.display = "block";
+    createTask();
 });
 
 submitForm.addEventListener("click", (event) => {
@@ -54,50 +57,3 @@ function getDate() {
 
 formDate.setAttribute("value", getDate());
 
-// DETAILS ------------------------------------------------------------------ //
-
-formDetail.addEventListener("blur", () => {
-    console.log(formDetail.value);
-});
-
-detailBtn.addEventListener("click", () => {
-    detailCtnr.style.display = "block";
-});
-
-closeDetails.addEventListener("click", () => {
-    detailCtnr.style.display = "none";
-});
-
-function setPriority(prio) {
-    switch (prio) {
-        case "low":
-            todo.style.borderLeft = "3px solid green";
-            break;
-        case "medium":
-            todo.style.borderLeft = "3px solid yellow";
-            break;
-        case "high":
-            todo.style.borderLeft = "3px solid red";
-            break;
-        default:
-            todo.style.borderLeft = "";
-    }
-}
-
-function setDetails() {
-    for (var i = 0; i < priorityBtns.length; i++) {
-        priorityBtns[i].addEventListener("click", function (event) {
-            detailPriority.textContent = `Priority: ${this.id}`;
-            setPriority(this.id);
-        });
-    };
-    submitForm.addEventListener("click", () => {
-        detailName.textContent = `Task Name: ${formTitle.value}`;
-        detailDate.textContent = `Due Date: ${formDate.value}`;
-        detailPara.textContent = `Details: ${formDetail.value}`;
-        todoDate.textContent = moment(formDate.value).format("MMM D YYYY");
-        todoTitle.textContent = formTitle.value;
-    });
-}
-
-setDetails();
