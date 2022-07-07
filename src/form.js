@@ -71,13 +71,13 @@ closeDetails.addEventListener("click", () => {
 function setPriority(prio) {
     switch (prio) {
         case "low":
-            todo.style.borderLeft = "2px solid green";
+            todo.style.borderLeft = "3px solid green";
             break;
         case "medium":
             todo.style.borderLeft = "3px solid yellow";
             break;
         case "high":
-            todo.style.borderLeft = "2px solid red";
+            todo.style.borderLeft = "3px solid red";
             break;
         default:
             todo.style.borderLeft = "";
@@ -101,5 +101,3 @@ function setDetails() {
 }
 
 setDetails();
-
-

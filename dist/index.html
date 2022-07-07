@@ -67,7 +67,10 @@
         <div class="action">
             <div class="sidebar">
                 <ul class="front-list">
-                    <li><button type="button" id="home">Home</button></li>
+                    <li>
+                        <button type="button" id="home">Home</button>
+                        <span id="todo-count">1</span>
+                    </li>
                     <li><button type="button" id="today">Today</button></li>
                     <li><button type="button" id="week">Week</button></li>
                     <li><button type="button" id="projects">Projects</button></li>
@@ -79,7 +82,26 @@
 
             <div class="main-container">
                 <div class="main">
-                    <div class="todo">
+                    <div class="todo" id="task-1">
+                        <span class="todo-check">
+                            <input type="checkbox">
+                        </span>
+                        <span id="todo-title"></span>
+                        <span id="todo-detail"><button type="button">Details</button></span>
+                        <span id="todo-date"></span>
+                        <div class="svgs">
+                            <object data="./images/edit-svgrepo-com.svg" type="image/svg+xml" class="todo-icon-edit">
+                            </object>
+                            <div onclick="javascript:deleteTodo();">
+                                <object data="./images/dust-bin-svgrepo-com.svg" type="image/svg+xml"
+                                    class="todo-icon-delete">
+                                </object>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class=" todo">
                         <span class="todo-check">
                             <input type="checkbox">
                         </span>
