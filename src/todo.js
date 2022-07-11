@@ -3,23 +3,8 @@ const countTasks = document.getElementById("todo-count");
 const notes = document.getElementById("notes");
 const home = document.getElementById("home");
 
-const detailName = document.getElementById("detail-name");
-const detailDate = document.getElementById("detail-date");
 const detailPriority = document.getElementById("detail-priority");
-const detailPara = document.getElementById("detail-para");
-const detailBtn = document.getElementById("todo-detail");
-const detailCtnr = document.getElementById("details-container");
-const closeDetails = document.getElementById("close-details");
-const formDetail = document.getElementById("task-desc");
-const priorityBtns = document.getElementsByClassName("pri-btns");
 const submitForm = document.getElementById("submit");
-
-const todo = document.getElementsByClassName("todo")[0];
-const formTitle = document.getElementById("task-name");
-const formDate = document.getElementById("updateDate");
-const todoDate = document.getElementById("todo-date");
-const todoTitle = document.getElementById("todo-title");
-
 const openForm = document.getElementById("new");
 
 
@@ -55,32 +40,24 @@ function openNotes() {
     })
 }
 
-function createHtmlFromString(stringHtml) {
-    const parser = new DOMParser();
-    const htmlFragment = document.createDocumentFragment();
-    const children = parser.parseFromString(stringHtml, "text/html").body
-        .children;
-    htmlFragment.replaceChildren(...children);
-    return htmlFragment;
-}
-
 // DETAILS ------------------------------------------------------------------ //
 
-formDetail.addEventListener("blur", () => {
-    console.log(formDetail.value);
-});
-
 function detailStyle() {
+    var detailBtn = document.getElementById("todo-detail");
+    var detailCtnr = document.getElementById("details-container");
+    var closeDetails = document.getElementById("close-details");
     detailBtn.addEventListener("click", () => {
         detailCtnr.style.display = "block";
     });
 
     closeDetails.addEventListener("click", () => {
         detailCtnr.style.display = "none";
-    });
+    })
+
 }
 
 function setPriority(prio) {
+    const todo = document.getElementsByClassName("todo")[0];
     switch (prio) {
         case "low":
             todo.style.borderLeft = "3px solid green";
@@ -96,21 +73,13 @@ function setPriority(prio) {
     }
 }
 
-function newDetails() {
-    for (var i = 0; i < priorityBtns.length; i++) {
-        priorityBtns[i].addEventListener("click", function () {
-            detailPriority.textContent = `Priority: ${this.id}`;
-            setPriority(this.id);
-        });
-    };
-    submitForm.addEventListener("click", () => {
-        createTask();
-        detailName.textContent = `Task Name: ${formTitle.value}`;
-        detailDate.textContent = `Due Date: ${formDate.value}`;
-        detailPara.textContent = `Details: ${formDetail.value}`;
-        todoDate.textContent = moment(formDate.value).format("MMM D YYYY");
-        todoTitle.textContent = formTitle.value;
-    });
+function createHtmlFromString(stringHtml) {
+    const parser = new DOMParser();
+    const htmlFragment = document.createDocumentFragment();
+    const children = parser.parseFromString(stringHtml, "text/html").body
+        .children;
+    htmlFragment.replaceChildren(...children);
+    return htmlFragment;
 }
 
 function createTask() {
@@ -138,11 +107,48 @@ function createTask() {
     );
     current.appendChild(htmlFrag);
     counter();
-}
+};
 
-function wrap() {
+function getPriority() {
+    var currentPriority = "";
+    var priorityBtns = document.getElementsByClassName("pri-btns");
+    for (var i = 0; i < priorityBtns.length; i++) {
+        priorityBtns[i].addEventListener("click", function () {
+            currentPriority = this.id;
+            console.log(currentPriority);
+            detailPriority.textContent = `Priority: ${this.id}`;
+            setPriority(this.id);
+        });
+    };
+    return currentPriority;
+};
 
-}
+
+openForm.addEventListener("click", () => {
+    createTask();
+    getPriority();
+    //console.log(detailBtn, detailCtnr);
+    submitForm.addEventListener("click", () => {
+        detailStyle();
+        var formTitle = document.getElementById("task-name");
+        var formDate = document.getElementById("updateDate");
+        var formDetail = document.getElementById("task-desc");
+        infoFiller(formTitle.value, formDate.value, formDetail.value, "");
+    });
+});
+
+function infoFiller(title, date, detail, priority) {
+    var todoDate = document.getElementById("todo-date");
+    var todoName = document.getElementById("todo-title");
+    var detailName = document.getElementById("detail-name");
+    var detailDate = document.getElementById("detail-date");
+    var detailPara = document.getElementById("detail-para");
+    todoName.textContent = title;
+    detailName.textContent = title;
+    todoDate.textContent = date;
+    detailDate.textContent = date;
+    detailPara.textContent = detail;
+};
 
 
-export { deleteTodo, counter, openNotes, createTask, newDetails };
+export { deleteTodo, counter, openNotes, createTask, infoFiller };
