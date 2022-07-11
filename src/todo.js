@@ -2,9 +2,6 @@ import { formatTodoDate, formatDetailDate } from "./form.js"
 
 const deleteBtn = document.querySelectorAll("todo-icon-delete");
 const countTasks = document.getElementById("todo-count");
-const notes = document.getElementById("notes");
-const home = document.getElementById("home");
-
 const detailPriority = document.getElementById("detail-priority");
 const submitForm = document.getElementById("submit");
 const openForm = document.getElementById("new");
@@ -26,21 +23,6 @@ function counter() {
     return quantifyTasks;
 }
 
-function openNotes() {
-    notes.addEventListener("click", () => {
-        const current = document.querySelector(".main");
-        current.innerHTML = "";
-        var container = document.createElement("div");
-        container.classList.add("note-container");
-        for (var i = 0; i < 4; i++) {
-            const note = document.createElement("textarea");
-            note.classList.add("note-format");
-            note.placeholder = "New Note: "
-            container.appendChild(note);
-        }
-        current.appendChild(container);
-    })
-}
 
 // DETAILS ------------------------------------------------------------------ //
 
@@ -152,4 +134,4 @@ function infoFiller(title, date, detail, priority) {
 };
 
 
-export { deleteTodo, counter, openNotes, createTask, infoFiller };
+export { deleteTodo, counter, createTask, infoFiller };
