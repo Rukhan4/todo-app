@@ -1,3 +1,5 @@
+import { formatTodoDate, formatDetailDate } from "./form.js"
+
 const deleteBtn = document.querySelectorAll("todo-icon-delete");
 const countTasks = document.getElementById("todo-count");
 const notes = document.getElementById("notes");
@@ -123,7 +125,6 @@ function getPriority() {
     return currentPriority;
 };
 
-
 openForm.addEventListener("click", () => {
     createTask();
     getPriority();
@@ -144,10 +145,10 @@ function infoFiller(title, date, detail, priority) {
     var detailDate = document.getElementById("detail-date");
     var detailPara = document.getElementById("detail-para");
     todoName.textContent = title;
-    detailName.textContent = title;
-    todoDate.textContent = date;
-    detailDate.textContent = date;
-    detailPara.textContent = detail;
+    detailName.textContent = `Title: ${title}`;
+    todoDate.textContent = formatTodoDate(date);
+    detailDate.textContent = `Due Date: ${formatDetailDate(date)}`;
+    detailPara.textContent = `Description: ${detail}`;
 };
 
 

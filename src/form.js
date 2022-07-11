@@ -34,10 +34,20 @@ closeForm.addEventListener("click", () => {
 
 // DATE CONTROL ------------------------------------------------------------- //
 
+var current = new Date();
+
 function getDate() {
-    var current = new Date();
     return current.toISOString().split('T')[0];
 };
 
 formDate.setAttribute("value", getDate());
 
+function formatTodoDate(date) {
+    return moment(date).format("MMM D, YYYY");
+}
+
+function formatDetailDate(date) {
+    return moment(date).format("MMMM D, YYYY");
+}
+
+export { formatTodoDate, formatDetailDate };
