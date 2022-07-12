@@ -35,19 +35,22 @@ closeForm.addEventListener("click", () => {
 // DATE CONTROL ------------------------------------------------------------- //
 
 var current = new Date();
+console.log(current);
 
 function getDate() {
-    return current.toISOString().split('T')[0];
+    var formatDate = current.toISOString().split('T')[0];
+    var lastDig = parseInt(formatDate.charAt(formatDate.length - 1)) - 1;
+    return formatDate.slice(0, -1) + lastDig;
 };
 
 formDate.setAttribute("value", getDate());
 
 function formatTodoDate(date) {
-    return moment(date).format("MMM D, YYYY");
+    return moment(date).format("MMM D YYYY");
 }
 
 function formatDetailDate(date) {
-    return moment(date).format("MMMM D, YYYY");
+    return moment(date).format("MMMM D, YYYY.");
 }
 
 export { formatTodoDate, formatDetailDate };

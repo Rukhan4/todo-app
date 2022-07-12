@@ -1,7 +1,7 @@
 import { formatTodoDate, formatDetailDate } from "./form.js"
 
 const deleteBtn = document.querySelectorAll("todo-icon-delete");
-const countTasks = document.getElementById("todo-count");
+const countTasks = document.getElementById("todo-count-home");
 const detailPriority = document.getElementById("detail-priority");
 const submitForm = document.getElementById("submit");
 const openForm = document.getElementById("new");

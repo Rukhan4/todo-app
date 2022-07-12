@@ -18,7 +18,6 @@ function openNotes() {
 }
 
 function openHome() {
-    //console.log("function seen");
     home.addEventListener("click", () => {
         current.innerHTML = "";
         //console.log("here");
