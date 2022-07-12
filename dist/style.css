@@ -113,7 +113,8 @@ ul.front-list>li>button:hover:not(#projects) {
     background-color: rgb(194, 235, 194);
 }
 
-#todo-count {
+#todo-count-home,
+#todo-count-today {
     float: right;
     margin-right: 15px;
     border: 1px solid deeppink;
