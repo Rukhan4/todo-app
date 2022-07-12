@@ -117,11 +117,11 @@ ul.front-list>li>button:hover:not(#projects) {
 #todo-count-today {
     float: right;
     margin-right: 15px;
-    border: 1px solid deeppink;
+    border: 1px dotted white;
     /* border-radius: 12px; */
     padding: 2px;
     font-size: 20px;
-    background-color: deeppink;
+    background-color: #82ff7d;
     color: white;
     text-align: center;
     border-radius: 50%;
@@ -446,12 +446,18 @@ input[type='checkbox']:checked:after {
 /* Notes */
 
 .note-container {
+    grid-template-rows: repeat(2, 1fr);
+    /* flex-grow: 1; */
     display: grid;
-    grid-row: auto auto;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, 1fr);
     gap: 20px;
-    height: 100%;
-    padding: 20px;
+    width: 81vh;
+    height: 52vh;
+    padding: 14px;
+    align-content: start;
+    /* justify-content: center; */
+    /* align-items: center; */
+    justify-items: center;
 }
 
 .note-format {
