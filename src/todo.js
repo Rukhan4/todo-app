@@ -8,7 +8,7 @@ const openForm = document.getElementById("new");
 
 
 function deleteTodo() {
-    const current = document.getElementById("task-1");
+    const current = document.getElementById("task");
     while (current.firstChild) {
         current.removeChild(current.firstChild);
         current.remove();
@@ -40,23 +40,6 @@ function detailStyle() {
 
 }
 
-function setPriority(prio) {
-    const todo = document.getElementsByClassName("todo")[0];
-    switch (prio) {
-        case "low":
-            todo.style.borderLeft = "3px solid green";
-            break;
-        case "medium":
-            todo.style.borderLeft = "3px solid yellow";
-            break;
-        case "high":
-            todo.style.borderLeft = "3px solid red";
-            break;
-        default:
-            todo.style.borderLeft = "";
-    }
-}
-
 function createHtmlFromString(stringHtml) {
     const parser = new DOMParser();
     const htmlFragment = document.createDocumentFragment();
@@ -71,7 +54,7 @@ function createTask() {
     var customID = 1;
     current.innerHTML = "";
     const htmlFrag = createHtmlFromString(
-        `<div class="todo" id="task-1">
+        `<div class="todo" id="task">
             <span class="todo-check">
                 <input type="checkbox">
             </span>
@@ -92,6 +75,23 @@ function createTask() {
     current.appendChild(htmlFrag);
     counter();
 };
+
+function setPriority(prio) {
+    const todo = document.getElementsByClassName("todo")[0];
+    switch (prio) {
+        case "low":
+            todo.style.borderLeft = "3px solid green";
+            break;
+        case "medium":
+            todo.style.borderLeft = "3px solid yellow";
+            break;
+        case "high":
+            todo.style.borderLeft = "3px solid red";
+            break;
+        default:
+            todo.style.borderLeft = "";
+    }
+}
 
 function getPriority() {
     var currentPriority = "";
